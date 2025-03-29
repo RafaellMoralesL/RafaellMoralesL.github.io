@@ -1,130 +1,258 @@
-<!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Currículum</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Currículum</title>
+
     <style>
+        /* General Styles */
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
+            font-family: Arial, Helvetica;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
-        }
-
-        header {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 1em 0;
-        }
-
-        section {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        h1, h2 {
             color: #333;
         }
 
-        .info {
-            display: flex;
-            justify-content: space-between;
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #262626;
+            color: white;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        section {
+            margin: 40px 0;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        h2 {
+            color: #0077b6;
+            font-size: 1.8rem;
             margin-bottom: 20px;
         }
 
-        .info div {
-            flex: 1;
+        footer {
+            text-align: center;
             padding: 10px;
-            margin: 0 5px;
-            background-color: #f0f0f0;
-            border-radius: 6px;
+            background-color: #333;
+            color: white;
         }
 
-        .profile-pic {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-right: 20px;
+        /* Section Background Colors */
+        .about {
+            background-color: #e0f7fa; /* Light Cyan */
         }
 
-        @media screen and (max-width: 600px) {
-            .info {
-                flex-direction: column;
-            }
+        .skills {
+            background-color: #f0f4c3; /* Light Lime */
+        }
 
-            .profile-pic {
-                margin-right: 0;
-                margin-bottom: 10px;
-            }
+        .experience {
+            background-color: #fff9c4; /* Light Yellow */
+        }
+
+        .education {
+            background-color: #ffecb3; /* Light Amber */
+        }
+
+        .footer {
+            background-color: #333;
+            color: white;
+        }
+
+        /* Skills Section Styles */
+        .skills h2 {
+            color: #0077b6;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .skill {
+            margin-bottom: 20px;
+        }
+
+        .skill h3 {
+            font-size: 1.2rem;
+            color: #333;
+            margin: 10px 0;
+        }
+
+        .progress-bar {
+            background-color: #e0e0e0;
+            border-radius: 10px;
+            height: 20px;
+            width: 100%;
+            margin: 5px 0;
+            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .progress {
+            height: 100%;
+            border-radius: 10px;
+            transition: width 1s ease-in-out;
+        }
+
+        .skill-level {
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        /* Custom Progress Bar Colors */
+        .progress-bar .progress {
+            background-color: #4CAF50; /* Default Green */
+        }
+
+        .progress-bar .progress[data-skill="HTML"] {
+            background-color: #f44336; /* Rojo para HTML */
+        }
+
+        .progress-bar .progress[data-skill="SQL"] {
+            background-color: #2196F3; /* Azul para SQL */
+        }
+
+        .progress-bar .progress[data-skill="JavaScript"] {
+            background-color: #FF9800; /* Naranja Claro para JS */
+        }
+
+        .progress-bar .progress[data-skill="Git"] {
+            background-color: #ff5722; /* Naranja para Git */
+        }
+
+		 .progress-bar .progress[data-skill="PHP"] {
+            background-color: #00ba79; /* Verde Cyan para PHP */
+        }
+
+			  .progress-bar .progress[data-skill="C"] {
+            background-color: #7e22ff; /* Morado para C */
+        }
+
+        /* About Section Styling */
+        .about {
+            background-color: #e0f7fa;
+            border-left: 5px solid #0077b6;
+        }
+
+        /* Experience Section Styling */
+        .experience {
+            background-color: #fff9c4;
+            border-left: 5px solid #f57c00;
+        }
+
+        /* Education Section Styling */
+        .education {
+            background-color: #ffecb3;
+            border-left: 5px solid #fbc02d;
         }
     </style>
 </head>
 <body>
+
+<div class="container">
+
+    <!-- Header Section -->
     <header>
-        <h1>Mi Currículum</h1>
+        <h1>Rafael Morales</h1>
+        <p>Técnico en Desarrollo de Software</p>
+        <p>| +(502) 4582 9802 | rafaeln100@hotmail.com |</p>
     </header>
 
-    <section>
-        <div style="text-align: center;">
-            <img class="profile-pic" src="https://w7.pngwing.com/pngs/178/595/png-transparent-user-profile-computer-icons-login-user-avatars-thumbnail.png" alt="Foto de perfil">
-        </div>
+    <!-- About Me Section -->
+    <section class="about">
+        <h2>Acerca de Mí</h2>
+        <p>
+            Estudiante con mucho entusiasmo en el desarrollo de Software, en la ciberseguridad y la Nube. 
+        </p>
     </section>
 
-    <section>
-        <h2>Datos Personales</h2>
-        <div class="info">
-            <div>
-                <h3>Nombre</h3>
-                <p>Rafael Humberto Morales Lara</p>
+    <!-- Skills Section -->
+    <section class="skills">
+        <h2>Habilidades</h2>
+
+        <!-- Skill 1: HTML -->
+        <div class="skill">
+            <h3>HTML</h3>
+            <div class="progress-bar">
+                <div class="progress" style="width: 15%;" data-skill="HTML"></div>
             </div>
-            <div>
-                <h3>Correo Electrónico</h3>
-                <p>25001309@galileo.edu</p>
-            </div>
-            <div>
-                <h3>Teléfono</h3>
-                <p>(502) 2211-1212</p>
-            </div>
+            <p class="skill-level">Principiante</p>
         </div>
+
+        <!-- Skill 2: SQL -->
+        <div class="skill">
+            <h3>SQL</h3>
+            <div class="progress-bar">
+                <div class="progress" style="width: 41%;" data-skill="SQL"></div>
+            </div>
+            <p class="skill-level">Intermedio</p>
+        </div>
+
+        <!-- Skill 3: JavaScript -->
+        <div class="skill">
+            <h3>JavaScript</h3>
+            <div class="progress-bar">
+                <div class="progress" style="width: 25%;" data-skill="JavaScript"></div>
+            </div>
+            <p class="skill-level">Principiante</p>
+        </div>
+
+
+        <!-- Skill 6: Git -->
+        <div class="skill">
+            <h3>Git</h3>
+            <div class="progress-bar">
+                <div class="progress" style="width: 38%;" data-skill="Git"></div>
+            </div>
+            <p class="skill-level">Intermedio</p>
+        </div>
+		
+		
+		 <!-- Skill 6: PHP -->
+        <div class="skill">
+            <h3>PHP</h3>
+            <div class="progress-bar">
+                <div class="progress" style="width: 8%;" data-skill="PHP"></div>
+            </div>
+            <p class="skill-level">Principiante</p>
+        </div>
+		
+		
+			 <!-- Skill 6: C -->
+        <div class="skill">
+            <h3>C</h3>
+            <div class="progress-bar">
+                <div class="progress" style="width: 8%;" data-skill="C"></div>
+            </div>
+            <p class="skill-level">Principiante</p>
+        </div>
+		
     </section>
 
-    <section>
-        <h2>Experiencia Laboral</h2>
-        <div>
-            <h3>Desarrollador Web</h3>
-            <p>Empresa ABC - Ciudad, País | Fecha de inicio - Fecha de fin</p>
-            <ul>
-                <li>Logros y responsabilidades...</li>
-                <li>Más logros y responsabilidades...</li>
-            </ul>
-        </div>
-
-        <div>
-            <h3>Otro Trabajo</h3>
-            <p>Otra Empresa - Ciudad, País | Fecha de inicio - Fecha de fin</p>
-            <ul>
-                <li>Logros y responsabilidades...</li>
-                <li>Más logros y responsabilidades...</li>
-            </ul>
-        </div>
-    </section>
-
-    <section>
+    <!-- Education Section -->
+    <section class="education">
         <h2>Educación</h2>
-        <div>
-            <h3>Grado Universitario</h3>
-            <p>Nombre de la Universidad - Ciudad, País | Fecha de inicio - Fecha de fin</p>
-            <p>Título obtenido y especialización (si aplica)</p>
+        <div class="education-item">
+            <h3>Diversificado - Bachiller en Ciencias y Letras con Orientación en Computación</h3>
         </div>
-    </section>
+        <div class="education-item">
+            <h3>Curso Cloud Computing - Escuela de Organización Industrial - España </h3>
+			<h5>Agosto - 2017</h5>
+        </div>
+		
+
 </body>
 </html>
-
